@@ -43,6 +43,16 @@ function App() {
     dispatch({ type: 'ADD_NOTE', payload: newNote })
   }
 
+  const dropNote = (e) => {
+    e.target.style.left = `${e.pageX - 50}px`
+    e.target.style.top = `${e.pageY - 50}px`
+  }
+
+  const dragOver = e => {
+    e.preventDefault()
+    e.stopPropagation()
+
+  }
 
   return (
     <div className="App" onDragOver={dragOver}>
