@@ -1,4 +1,5 @@
 import './App.scss';
+import DeleteBtn from './DeleteBtn';
 import React, { useState, useReducer } from 'react'
 import { v4 as uuid } from 'uuid'
 
@@ -75,7 +76,8 @@ function App() {
               style={{ transform: `rotate(${note.rotate}deg)` }}
               draggable="true"
               onDragEnd={dropNote}
-            key={note.id}>
+              key={note.id}>
+              <DeleteBtn />
               <pre className="text">{note.text}</pre>
             </div>
           ))
