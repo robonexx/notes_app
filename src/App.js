@@ -41,6 +41,7 @@ function App() {
       rotate: Math.floor(Math.random() *20),
     }
     dispatch({ type: 'ADD_NOTE', payload: newNote })
+    setNoteInput('')
   }
 
   const dropNote = (e) => {
@@ -55,7 +56,7 @@ function App() {
   }
 
   return (
-    <div className="App" onDragOver={dragOver}>
+    <div className="wrapper" onDragOver={dragOver}>
       <h1>Your daily notes</h1>
       <form onSubmit={addNote} className="noteForm">
         <textarea name=""
@@ -65,6 +66,7 @@ function App() {
         ></textarea>
         <button>Add</button>
       </form >
+      <section>
       {
         notesState
           .notes
@@ -78,6 +80,7 @@ function App() {
             </div>
           ))
       }
+      </section>
     </div>
   );
 }

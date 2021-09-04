@@ -1,20 +1,17 @@
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-.App {
-  padding: 50px;
-  width: 100vw;
-  min-height: 100vh;
-  height: 100%;
-  background-image: linear-gradient(to bottom, #121212, #282828)
 
+}
+.wrapper {
+  padding: 50px;
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, #121212, #282828);
+  overflow: hidden;
 }
 
 h1 {
   color: #fafafa;
+  text-align: center;
   span {
     display: block;
     color: darken(white, 20%);
@@ -25,7 +22,12 @@ h1 {
 }
 
 .noteForm {
-  position: relative;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 10;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,7 +44,7 @@ h1 {
   }
 
   button {
-    width: 25%;
+    width: 100%;
     background-color: teal;
     cursor: pointer;
     padding: 10px;
@@ -66,7 +68,7 @@ h1 {
   background-size: cover;
   background-repeat: no-repeat;
   top: 100px;
-  left: 300px;
+  left: 100px;
   height: 200px;
   width: 200px;
   padding: 40px;
@@ -80,4 +82,9 @@ h1 {
   white-space: pre-wrap;
   line-break: auto;
   overflow-y: auto;
+}
+section {
+  position: relative;
+  width: 100vw;
+  height: 100%;
 }
