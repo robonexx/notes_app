@@ -20,7 +20,16 @@ const notesReducer = ( prevState, action ) => {
       }
       console.log('After ADD_NOTE: ', newState)
       return newState
-   }
+    }
+      
+    case 'DELETE_NOTE': {
+      const newState = {
+        ...prevState,
+        totalNotes: prevState.totalNotes - 1,
+        notes: prevState.notes.filter(note => note.id !== action.payload.id)
+      }
+      return newState
+      }
  }
 }
 
@@ -77,7 +86,9 @@ function App() {
               draggable="true"
               onDragEnd={dropNote}
               key={note.id}>
+              <div onClick={() => dispatch({type: 'DELETE_NOTE', payload: note })}>
               <DeleteBtn />
+              </div>
               <pre className="text">{note.text}</pre>
             </div>
           ))

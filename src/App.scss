@@ -100,11 +100,16 @@ section {
   align-items: center;
   justify-content: center;
   color: #282828;
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   outline: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 800;
+  &:hover {
+    filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.6));
+    transform: scale(1.1);
+  }
+  
 }
